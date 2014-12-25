@@ -1,4 +1,11 @@
-
+@font-face {
+  font-family: 'Century Gothic'; 
+  src: url('../fonts/century_gothic.eot'); 
+}  
+//font-family: 'PT Sans', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
+//font-family: 'Open Sans', sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic);
 //
 // Load core variables and mixins
 // --------------------------------------------------
@@ -6,267 +13,390 @@
 @import "variables.less";
 @import "mixins.less";
 
-
-//
-// Buttons
-// --------------------------------------------------
-
-// Common styles
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
-  .box-shadow(@shadow);
-
-  // Reset the shadow
-  &:active,
-  &.active {
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-  }
-
-  .badge {
-    text-shadow: none;
-  }
+html {
+  font-size: 80%;
 }
-
-// Mixin for generating new styles
-.btn-styles(@btn-color: #555) {
-  #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
-  .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners
-  background-repeat: repeat-x;
-  border-color: darken(@btn-color, 14%);
-
-  &:hover,
-  &:focus  {
-    background-color: darken(@btn-color, 12%);
-    background-position: 0 -15px;
-  }
-
-  &:active,
-  &.active {
-    background-color: darken(@btn-color, 12%);
-    border-color: darken(@btn-color, 14%);
-  }
-
-  &:disabled,
-  &[disabled] {
-    background-color: darken(@btn-color, 12%);
-    background-image: none;
-  }
+.img-scale {
+  width: 80%;
 }
-
-// Common styles
-.btn {
-  // Remove the gradient for the pressed/active state
-  &:active,
-  &.active {
-    background-image: none;
-  }
+body {
+  font-family: 'Open Sans', sans-serif;
 }
-
-// Apply the mixin to the buttons
-.btn-default { .btn-styles(@btn-default-bg); text-shadow: 0 1px 0 #fff; border-color: #ccc; }
-.btn-primary { .btn-styles(@btn-primary-bg); }
-.btn-success { .btn-styles(@btn-success-bg); }
-.btn-info    { .btn-styles(@btn-info-bg); }
-.btn-warning { .btn-styles(@btn-warning-bg); }
-.btn-danger  { .btn-styles(@btn-danger-bg); }
-
-
-//
-// Images
-// --------------------------------------------------
-
-.thumbnail,
-.img-thumbnail {
-  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+.container_theme {
+  padding: 0 15px;
 }
 
 
 //
-// Dropdowns
+// Оглавление
 // --------------------------------------------------
+// 1.Header
+// 2.Navbar
+// 3.Icons
+// 4.Slider
+// 5.Заголовки
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  #gradient > .vertical(@start-color: @dropdown-link-hover-bg; @end-color: darken(@dropdown-link-hover-bg, 5%));
-  background-color: darken(@dropdown-link-hover-bg, 5%);
-}
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
-  background-color: darken(@dropdown-link-active-bg, 5%);
-}
 
 
 //
-// Navbar
+// 1.Header
 // --------------------------------------------------
+.header_wrap {
+  background: url('../img/skin.png') repeat-x left bottom;
+  color: #eaeaea;
+  font-family: 'PT Sans', sans-serif;
+  padding: 5px 0 10px;
+}
+.header_logo > img {
+  max-height: 65px;
+  .center-block();
+}
+.header_contact {
+  text-align: center;
+  >span {
+    display: block;
+  }
+  .tel {
+    font-size: 2.25rem; //36px
+    font-family: 'Century Gothic', sans-serif;
+  }
+  .mode {
+    font-size: 1.05rem; //17px
+    vertical-align: top;
+    line-height: 1.10rem;
+  }
+  .indicator {
+    background: url('../img/csg-549baf48a8121.png') no-repeat top left;
+    background-position: 0 -27px; width: 21px; height: 22px;
+    display: inline-block;
+    vertical-align: top;
 
-// Default navbar
-.navbar-default {
-  #gradient > .vertical(@start-color: lighten(@navbar-default-bg, 10%); @end-color: @navbar-default-bg);
-  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
-  border-radius: @navbar-border-radius;
-  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
-  .box-shadow(@shadow);
-
-  .navbar-nav > .open > a,
-  .navbar-nav > .active > a {
-    #gradient > .vertical(@start-color: darken(@navbar-default-link-active-bg, 5%); @end-color: darken(@navbar-default-link-active-bg, 2%));
-    .box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
+    &.off {
+      background-position: 0 0; width: 21px; height: 22px;
+    }
+  }
+  .desc {
+    font-size: 0.7rem; //11px
   }
 }
-.navbar-brand,
-.navbar-nav > li > a {
-  text-shadow: 0 1px 0 rgba(255,255,255,.25);
-}
 
-// Inverted navbar
-.navbar-inverse {
-  #gradient > .vertical(@start-color: lighten(@navbar-inverse-bg, 10%); @end-color: @navbar-inverse-bg);
-  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
 
-  .navbar-nav > .open > a,
-  .navbar-nav > .active > a {
-    #gradient > .vertical(@start-color: @navbar-inverse-link-active-bg; @end-color: lighten(@navbar-inverse-link-active-bg, 2.5%));
-    .box-shadow(inset 0 3px 9px rgba(0,0,0,.25));
-  }
 
-  .navbar-brand,
-  .navbar-nav > li > a {
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  }
-}
+//
+// 2.Navbar
+// --------------------------------------------------
+.navbar-theme {
+  background-color: @navbar-inverse-bg;
+  border-color: @navbar-inverse-border;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
 
-// Undo rounded corners in static and fixed navbars
-.navbar-static-top,
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  border-radius: 0;
-}
 
-// Fix active state of dropdown items in collapsed mode
-@media (max-width: @grid-float-breakpoint-max) {
-  .navbar .navbar-nav .open .dropdown-menu > .active > a {
-    &,
+  .navbar-brand {
+    color: @navbar-inverse-brand-color;
     &:hover,
     &:focus {
-      color: #fff;
-      #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+      color: @navbar-inverse-brand-hover-color;
+      background-color: @navbar-inverse-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: @navbar-inverse-color;
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: @navbar-inverse-link-color;
+
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-hover-color;
+        background-color: @navbar-inverse-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-active-color;
+        background-color: @navbar-inverse-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-disabled-color;
+        background-color: @navbar-inverse-link-disabled-bg;
+      }
+    }
+  }
+
+  // Darken the responsive nav toggle
+  .navbar-toggle {
+    border-color: @navbar-inverse-toggle-border-color;
+    margin-right: 0;
+    &:hover,
+    &:focus {
+      background-color: @navbar-inverse-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: @navbar-inverse-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: darken(@navbar-inverse-bg, 7%);
+  }
+
+  // Dropdowns
+  .navbar-nav {
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-inverse-link-active-bg;
+        color: @navbar-inverse-link-active-color;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      // Dropdowns get custom display
+      .open .dropdown-menu {
+        > .dropdown-header {
+          border-color: @navbar-inverse-border;
+        }
+        .divider {
+          background-color: @navbar-inverse-border;
+        }
+        > li > a {
+          color: @navbar-inverse-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-hover-color;
+            background-color: @navbar-inverse-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-active-color;
+            background-color: @navbar-inverse-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-disabled-color;
+            background-color: @navbar-inverse-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-link {
+    color: @navbar-inverse-link-color;
+    &:hover {
+      color: @navbar-inverse-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: @navbar-inverse-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-inverse-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-disabled-color;
+      }
+    }
+  }
+  .open_order > a:before {
+    display: inline-block;
+    content: " ";
+    background: url('../img/csg-549bd6db0acdc.png') no-repeat top left;
+    background-position: 0 -415px; width: 28px; height: 28px; 
+    vertical-align: middle;
+  } 
+}
+
+
+
+//
+// 3.Icons
+// --------------------------------------------------
+[class^="ico-"] {
+  background: url('../img/csg-549bd6db0acdc.png') no-repeat top left;
+}
+.ico-book{ background-position: 0 0; width: 46px; height: 43px; } 
+.ico-email{ background-position: 0 -48px; width: 13px; height: 11px; } 
+.ico-eye{ background-position: 0 -64px; width: 24px; height: 13px; } 
+.ico-folder{ background-position: 0 -82px; width: 46px; height: 37px; } 
+.ico-graduate{ background-position: 0 -124px; width: 25px; height: 24px; } 
+.ico-location{ background-position: 0 -153px; width: 14px; height: 18px; } 
+.ico-medal{ background-position: 0 -176px; width: 46px; height: 42px; } 
+.ico-pencil{ background-position: 0 -223px; width: 46px; height: 46px; } 
+.ico-phone{ background-position: 0 -274px; width: 18px; height: 18px; } 
+.ico-pin-map{ background-position: 0 -297px; width: 46px; height: 51px; } 
+.ico-plus{ background-position: 0 -353px; width: 16px; height: 16px; } 
+.ico-quotes{ background-position: 0 -374px; width: 46px; height: 36px; } 
+.ico-shape{ background-position: 0 -415px; width: 28px; height: 28px; } 
+.ico-small-tag{ background-position: 0 -448px; width: 12px; height: 12px; } 
+.ico-tag{ background-position: 0 -465px; width: 50px; height: 50px; } 
+.ico-time{ background-position: 0 -520px; width: 16px; height: 19px; } 
+.ico-zoom{ background-position: 0 -544px; width: 46px; height: 47px; } 
+
+
+
+//
+// 4.Slider
+// --------------------------------------------------
+#carousel-example-generic {
+  background: #eaeaea;
+}
+.slide-desc {
+  padding: 1rem;
+  
+  .title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.3rem;
+  }
+  .answer {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    padding-left: 1.2rem;
+    line-height: 1.2rem;
+    li {
+      margin-bottom: 0.4rem;
     }
   }
 }
+.carousel-control {
+  width: 3rem;
+  height: 3rem;
+  left: auto;
+  top: auto;
+  color: #444444;
+
+  &:hover,
+  &:focus {
+    color: #000;
+  }
+
+  .glyphicon-chevron-left,
+  .glyphicon-chevron-right {
+    margin-top: -0.75rem;
+    font-size: 1.5rem;
+  }
+
+
+  &.left {
+    background: rgba(255, 255, 255, 0.9);
+    right: 3.57rem;
+    bottom: 0.5rem;
+  }
+
+  &.right {
+    background: rgba(255, 255, 255, 0.9);
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+}
+
 
 
 //
-// Alerts
+// 5.Заголовки
 // --------------------------------------------------
-
-// Common styles
-.alert {
-  text-shadow: 0 1px 0 rgba(255,255,255,.2);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
-  .box-shadow(@shadow);
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'PT Sans', sans-serif;
 }
 
-// Mixin for generating new styles
-.alert-styles(@color) {
-  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 7.5%));
-  border-color: darken(@color, 15%);
-}
-
-// Apply the mixin to the alerts
-.alert-success    { .alert-styles(@alert-success-bg); }
-.alert-info       { .alert-styles(@alert-info-bg); }
-.alert-warning    { .alert-styles(@alert-warning-bg); }
-.alert-danger     { .alert-styles(@alert-danger-bg); }
 
 
 //
-// Progress bars
+// 6.Box
 // --------------------------------------------------
-
-// Give the progress background some depth
-.progress {
-  #gradient > .vertical(@start-color: darken(@progress-bg, 4%); @end-color: @progress-bg)
+.box {
+  background: #f3f1ef;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 10px 0;
+  
 }
-
-// Mixin for generating new styles
-.progress-bar-styles(@color) {
-  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 10%));
+.box_content {
+  padding: 0 15px;
 }
+[class^="list_mod_"] {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-// Apply the mixin to the progress bars
-.progress-bar            { .progress-bar-styles(@progress-bar-bg); }
-.progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
-.progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
-.progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
-.progress-bar-danger     { .progress-bar-styles(@progress-bar-danger-bg); }
+  li {
+    position: relative;
+    padding-left: 15px; 
 
-// Reset the striped class because our mixins don't do multiple gradients and
-// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
-.progress-bar-striped {
-  #gradient > .striped();
-}
-
-
-//
-// List groups
-// --------------------------------------------------
-
-.list-group {
-  border-radius: @border-radius-base;
-  .box-shadow(0 1px 2px rgba(0,0,0,.075));
-}
-.list-group-item.active,
-.list-group-item.active:hover,
-.list-group-item.active:focus {
-  text-shadow: 0 -1px 0 darken(@list-group-active-bg, 10%);
-  #gradient > .vertical(@start-color: @list-group-active-bg; @end-color: darken(@list-group-active-bg, 7.5%));
-  border-color: darken(@list-group-active-border, 7.5%);
-
-  .badge {
-    text-shadow: none;
+    &:before {
+      content: "::";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
   }
 }
+[class^="box_head_"] {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0 0 0 40px;
+  position: relative;
+  margin-bottom: 15px;
 
-
-//
-// Panels
-// --------------------------------------------------
-
-// Common styles
-.panel {
-  .box-shadow(0 1px 2px rgba(0,0,0,.05));
+  &:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    background: url('../img/csg-549bd6db0acdc.png') no-repeat top left;
+    left: -14px;
+    top: 0px;
+  }
+}
+.box_head__book:before {
+  background-position: 0 0; width: 46px; height: 43px;
 }
 
-// Mixin for generating new styles
-.panel-heading-styles(@color) {
-  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 5%));
-}
 
-// Apply the mixin to the panel headings only
-.panel-default > .panel-heading   { .panel-heading-styles(@panel-default-heading-bg); }
-.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
-.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
-.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
-.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
-.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+@import "theme768up.less";
+@import "theme992up.less";
+@import "theme1200up.less";
+
+/* Запросы для диапазонов */
+@media (max-width: @screen-xs-max) {  }
 
 
-//
-// Wells
-// --------------------------------------------------
 
-.well {
-  #gradient > .vertical(@start-color: darken(@well-bg, 5%); @end-color: @well-bg);
-  border-color: darken(@well-bg, 10%);
-  @shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
-  .box-shadow(@shadow);
-}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {  }
+
+
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {  }
+
+
+
+@media (min-width: @screen-lg-min) { }

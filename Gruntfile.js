@@ -114,8 +114,8 @@ module.exports = function (grunt) {
           'js/dropdown.js',
           'js/modal.js',
           'js/tooltip.js',
-          'js/popover.js',
-          'js/scrollspy.js',
+          //'js/popover.js',
+          //'js/scrollspy.js',
           'js/tab.js',
           'js/affix.js'
         ],
@@ -149,25 +149,25 @@ module.exports = function (grunt) {
     },
 
     less: {
-      compileCore: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
-        },
-        src: 'less/bootstrap.less',
-        dest: 'dist/css/<%= pkg.name %>.css'
-      },
+      // compileCore: {
+      //   options: {
+      //     strictMath: true,
+      //     sourceMap: true,
+      //     outputSourceFiles: true,
+      //     sourceMapURL: '<%= pkg.name %>.css.map',
+      //     sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+      //   },
+      //   src: 'less/bootstrap.less',
+      //   dest: 'dist/css/<%= pkg.name %>.css'
+      // },
       compileTheme: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
-        },
+        // options: {
+        //   strictMath: true,
+        //   sourceMap: true,
+        //   outputSourceFiles: true,
+        //   sourceMapURL: '<%= pkg.name %>-theme.css.map',
+        //   sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
+        // },
         src: 'less/theme.less',
         dest: 'dist/css/<%= pkg.name %>-theme.css'
       }
@@ -177,27 +177,27 @@ module.exports = function (grunt) {
       options: {
         browsers: configBridge.config.autoprefixerBrowsers
       },
-      core: {
-        options: {
-          map: true
-        },
-        src: 'dist/css/<%= pkg.name %>.css'
-      },
+      // core: {
+      //   options: {
+      //     map: true
+      //   },
+      //   src: 'dist/css/<%= pkg.name %>.css'
+      // },
       theme: {
-        options: {
-          map: true
-        },
+        // options: {
+        //   map: true
+        // },
         src: 'dist/css/<%= pkg.name %>-theme.css'
       },
-      docs: {
-        src: 'docs/assets/css/src/docs.css'
-      },
-      examples: {
-        expand: true,
-        cwd: 'docs/examples/',
-        src: ['**/*.css'],
-        dest: 'docs/examples/'
-      }
+      // docs: {
+      //   src: 'docs/assets/css/src/docs.css'
+      // },
+      // examples: {
+      //   expand: true,
+      //   cwd: 'docs/examples/',
+      //   src: ['**/*.css'],
+      //   dest: 'docs/examples/'
+      // }
     },
 
     csslint: {
@@ -205,12 +205,12 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       dist: [
-        'dist/css/bootstrap.css',
+        //'dist/css/bootstrap.css',
         'dist/css/bootstrap-theme.css'
       ],
-      examples: [
-        'docs/examples/**/*.css'
-      ],
+      // examples: [
+      //   'docs/examples/**/*.css'
+      // ],
       docs: {
         options: {
           ids: false,
@@ -226,21 +226,21 @@ module.exports = function (grunt) {
         keepSpecialComments: '*',
         noAdvanced: true
       },
-      minifyCore: {
-        src: 'dist/css/<%= pkg.name %>.css',
-        dest: 'dist/css/<%= pkg.name %>.min.css'
-      },
+      // minifyCore: {
+      //   src: 'dist/css/<%= pkg.name %>.css',
+      //   dest: 'dist/css/<%= pkg.name %>.min.css'
+      // },
       minifyTheme: {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
       },
-      docs: {
-        src: [
-          'docs/assets/css/src/docs.css',
-          'docs/assets/css/src/pygments-manni.css'
-        ],
-        dest: 'docs/assets/css/docs.min.css'
-      }
+      // docs: {
+      //   src: [
+      //     'docs/assets/css/src/docs.css',
+      //     'docs/assets/css/src/pygments-manni.css'
+      //   ],
+      //   dest: 'docs/assets/css/docs.min.css'
+      // }
     },
 
     usebanner: {
@@ -263,16 +263,16 @@ module.exports = function (grunt) {
         src: ['*.css', '!*.min.css'],
         dest: 'dist/css/'
       },
-      examples: {
-        expand: true,
-        cwd: 'docs/examples/',
-        src: '**/*.css',
-        dest: 'docs/examples/'
-      },
-      docs: {
-        src: 'docs/assets/css/src/docs.css',
-        dest: 'docs/assets/css/src/docs.css'
-      }
+      // examples: {
+      //   expand: true,
+      //   cwd: 'docs/examples/',
+      //   src: '**/*.css',
+      //   dest: 'docs/examples/'
+      // },
+      // docs: {
+      //   src: 'docs/assets/css/src/docs.css',
+      //   dest: 'docs/assets/css/src/docs.css'
+      // }
     },
 
     copy: {
