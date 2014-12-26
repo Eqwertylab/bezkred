@@ -21,6 +21,7 @@ html {
 // 1.Header
 // 2.Navbar
 // 3.Slider
+// 4.Footer
 
 
 
@@ -32,8 +33,11 @@ html {
   padding-top: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.header_contact {
+.header_wrap .card_contact {
   float: right;
+  text-align: left;
+}
+.card_contact {
   text-align: left;
 }
 .header_logo > img {
@@ -49,10 +53,10 @@ html {
   min-height: auto;
 }
 .navbar-theme {
-  background: transparent;
+  background: url('../img/skin.png') repeat-x left bottom;
   border-color: transparent;
-  margin-top: -50px;
-  margin-bottom: 15px;
+  height: 47px;
+  margin-top: -47px;
   text-transform: uppercase;
 
   .container_theme {
@@ -106,6 +110,52 @@ html {
   width: 50%;
   float: left;
 }
+
+
+
+//
+// 4.Team
+// --------------------------------------------------
+.team {
+  text-align: center;
+  .photo {
+    float: none;
+    width: auto;
+    margin-right: 0;
+  }
+  .employee {
+    margin-bottom: 0;
+  }
+  .desc {
+    overflow: visible;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 1.05rem;
+    display: block;
+    line-height: 1.1
+  }
+  .post {
+    font-size: 0.7rem;
+    display: block;
+  }
+  .email {
+    font-size: 0.75rem;
+    display: block;
+  }
+}
+
+
+
+//
+// 4.Footer
+// --------------------------------------------------
+.footer_logo > img {
+  float: left;
+}
+
+
+
 
 
 // End  

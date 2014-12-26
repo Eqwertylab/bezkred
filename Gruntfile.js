@@ -149,7 +149,7 @@ module.exports = function (grunt) {
     },
 
     less: {
-      // compileCore: {
+      compileCore: {
       //   options: {
       //     strictMath: true,
       //     sourceMap: true,
@@ -157,9 +157,9 @@ module.exports = function (grunt) {
       //     sourceMapURL: '<%= pkg.name %>.css.map',
       //     sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
       //   },
-      //   src: 'less/bootstrap.less',
-      //   dest: 'dist/css/<%= pkg.name %>.css'
-      // },
+        src: 'less/bootstrap.less',
+        dest: 'dist/css/<%= pkg.name %>.css'
+      },
       compileTheme: {
         // options: {
         //   strictMath: true,
@@ -177,12 +177,12 @@ module.exports = function (grunt) {
       options: {
         browsers: configBridge.config.autoprefixerBrowsers
       },
-      // core: {
-      //   options: {
-      //     map: true
-      //   },
-      //   src: 'dist/css/<%= pkg.name %>.css'
-      // },
+      core: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>.css'
+      },
       theme: {
         // options: {
         //   map: true
@@ -205,7 +205,7 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       dist: [
-        //'dist/css/bootstrap.css',
+        'dist/css/bootstrap.css',
         'dist/css/bootstrap-theme.css'
       ],
       // examples: [
@@ -226,10 +226,10 @@ module.exports = function (grunt) {
         keepSpecialComments: '*',
         noAdvanced: true
       },
-      // minifyCore: {
-      //   src: 'dist/css/<%= pkg.name %>.css',
-      //   dest: 'dist/css/<%= pkg.name %>.min.css'
-      // },
+      minifyCore: {
+        src: 'dist/css/<%= pkg.name %>.css',
+        dest: 'dist/css/<%= pkg.name %>.min.css'
+      },
       minifyTheme: {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'

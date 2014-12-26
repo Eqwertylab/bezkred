@@ -21,9 +21,15 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  background: url('../img/p5.png');
+  position: relative;
 }
 .container_theme {
   padding: 0 15px;
+}
+.main_wrap {
+  background: #fff;
+  padding-top: 15px;
 }
 
 
@@ -35,6 +41,10 @@ body {
 // 3.Icons
 // 4.Slider
 // 5.Заголовки
+// 6.Box
+// 7.Team
+// 8.Цитата
+// 9.Footer
 
 
 
@@ -51,7 +61,7 @@ body {
   max-height: 65px;
   .center-block();
 }
-.header_contact {
+.card_contact {
   text-align: center;
   >span {
     display: block;
@@ -91,6 +101,8 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
+  margin-bottom: 0;
+  z-index: 1000;
 
 
   .navbar-brand {
@@ -229,12 +241,25 @@ body {
     vertical-align: middle;
   } 
 }
-
+.affix {
+  position: inherit;
+  transform: none;
+  .header_wrap {
+    margin-bottom: 52px;
+  }
+  .navbar-theme {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
 
 
 //
 // 3.Icons
 // --------------------------------------------------
+@ico-bg : url('../img/csg-549bd6db0acdc.png') no-repeat top left;
 [class^="ico-"] {
   background: url('../img/csg-549bd6db0acdc.png') no-repeat top left;
 }
@@ -336,6 +361,28 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 8px;
   margin: 1rem 0;
   padding: 10px 0;
+
+  a {
+    color:@text-color;
+    &:hover {
+      color: darken(@text-color, 15%)
+    }
+  }
+
+  [class^="list_mod_"] > li:before {
+    color: @link-color;
+    font-weight: bold;
+  }
+
+  .see_more {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: @link-color;
+    &:hover {
+      color: @link-hover-color;
+    }
+  }
   
 }
 .box_content {
@@ -348,10 +395,9 @@ h1,h2,h3,h4,h5,h6 {
 
   li {
     position: relative;
-    padding-left: 15px; 
+    padding-left: 18px; 
 
     &:before {
-      content: "::";
       position: absolute;
       left: 0;
       top: 0;
@@ -360,6 +406,40 @@ h1,h2,h3,h4,h5,h6 {
     }
   }
 }
+.list_mod__dot > li:before {
+  content: "::";
+}
+.list_mod__sharp > li:before {
+  content: "#"; 
+}
+.list_mod__eye {
+  line-height: 1.125rem;
+  span {
+    display: block;
+  }
+  .title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: @link-color;
+  }
+  li {
+    padding-left: 30px;
+    margin-bottom: 10px;
+    &:hover {
+      .title {
+        color: @link-hover-color;  
+      }
+    }
+  }
+  
+  > li:before {
+    top:3px;
+    content: " ";
+    display: block; 
+    background: @ico-bg;
+    .ico-eye();
+  }
+} 
 [class^="box_head_"] {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
@@ -378,8 +458,117 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 .box_head__book:before {
-  background-position: 0 0; width: 46px; height: 43px;
+  .ico-book();
 }
+.box_head__pencil:before {
+  .ico-pencil();
+}
+.box_head__medal:before {
+  .ico-medal();
+}
+
+
+
+//
+// 7.Team
+// --------------------------------------------------
+.team {
+  //text-align: center;
+  .photo {
+    float: left;
+    width: 75px;
+    margin-right: 15px;
+  }
+  .desc {
+    overflow: hidden;
+  }
+  .employee {
+    .clearfix();
+    margin-bottom: 15px;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 1.05rem;
+    display: block;
+    line-height: 1.1
+  }
+  .post {
+    font-size: 0.7rem;
+    display: block;
+  }
+  .email {
+    font-size: 0.75rem;
+    display: block;
+    position: relative;
+    padding-left: 16px;
+    &:before {
+      display: block;
+      position: absolute;
+      content: " ";
+      background: @ico-bg;
+      .ico-email();
+      left: 0;
+      top: 3px;
+    }
+  }
+}
+
+
+
+//
+// 8.Цитата
+// --------------------------------------------------
+.bash {
+  margin: 20px 0;
+  display: inline-block;
+  position: relative;
+  padding: 10px 0 0 60px;
+  &:before {
+    display: block;
+    content: " ";
+    background: @ico-bg;
+    .ico-quotes();
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .cont {
+    font-family: 'Times new roman', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-style: italic;
+    display: block;
+  }
+  .author {
+    font-size: 1.25rem;
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-left: 30px; 
+    &:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      background: @ico-bg;
+      .ico-graduate();
+      left: 0;
+      top: 5px;
+    }
+  }
+}
+
+
+
+//
+// 9.Footer
+// --------------------------------------------------
+.footer {
+  padding: 1.5rem 0;
+}
+.footer_logo > img {
+  .center-block();
+}
+
 
 
 @import "theme768up.less";

@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Главная</title>
+    
+    <link rel="stylesheet" href="dist/js/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="dist/js/fancybox/helpers/jquery.fancybox-buttons.css">
 
     <!-- Bootstrap -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +45,7 @@
 
           <!-- Контакты -->
           <div class="col-sm-6">
-            <div class="header_contact">
+            <div class="card_contact">
               <span class="tel">8(800)333-58-34</span>
               <span class="mode">
                 <i class="indicator"></i> <!-- <<<< добавлять класс off в нерабочее время -->
@@ -91,7 +94,10 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- / Навигация -->
+    
 
+    <!-- Основной контент -->
+    <div class="main_wrap">
     <div class="container_theme">
 
 
@@ -162,12 +168,51 @@
           <img src="dist/img/post1.jpg" alt="" class="pull-right" style="margin-left: 10px;">
           <p>Кредитор, как того требуют нормы международного частного права, аналогичен. Суд, как можно доказать с помощью не совсем тривиальных допущений, установлен обычаями делового оборота. Банкротство, как следует из теоретических исследований, виновно наследует диспозитивный объект права. Новация показательна.</p>
           <p>Оферта защищает валютный предпринимательский риск. Кодекс законодательно подтверждает коносамент, что часто служит основанием изменения и прекращения гражданских прав и обязанностей. Концессия, вследствие публичности данных отношений, уголовно наказуема. Штраф, делая скидку на латентность данных правоотношений, объективно доказывает конфиденциальный аккредитив.</p>
+          <h2>Наша команда</h2>
+          <div class="row team">
+            <div class="employee col-sm-3">
+              <img src="dist/img/team/2.png" alt="" class="img-responsive photo">
+              <div class="desc">
+                <header class="name">Пацинский Алексей</header>
+                <span class="post">Генеральный директор</span>
+                <a href="mailto:pav@bezkreditoff.ru" class="email">pav@bezkreditoff.ru</a>
+              </div>
+            </div>
+            <div class="employee col-sm-3">
+              <img src="dist/img/team/3.png" alt="" class="img-responsive photo">
+              <div class="desc">
+                <header class="name">Старовойтов Виктор</header>
+                <span class="post">Ведущий юрист</span>
+                <a href="mailto:svn@bezkreditoff.ru" class="email">svn@bezkreditoff.ru</a>
+              </div>
+            </div>
+            <div class="employee col-sm-3">
+              <img src="dist/img/team/4.png" alt="" class="img-responsive photo">
+              <div class="desc">
+                <header class="name">Копанский Александр</header>
+                <span class="post">Руководитель юридического отдела</span>
+                <a href="mailto:kas@bezkreditoff.ru" class="email">kas@bezkreditoff.ru</a>
+              </div>
+            </div>
+            <div class="employee col-sm-3">
+              <img src="dist/img/team/1.png" alt="" class="img-responsive photo">
+              <div class="desc">
+                <header class="name">Нелепин Кирилл</header>
+                <span class="post">Руководитель отдела работы с клиентами</span>
+                <a href="mailto:nkm@bezkreditoff.ru" class="email">nkm@bezkreditoff.ru</a>
+              </div>
+            </div>
+          </div>
         </section>
         <!-- / Контент -->
 
 
 
+        <!-- Сайдбар -->
         <aside class="col-sm-4">
+
+
+          <!-- Новости -->
           <section class="box">
             <header class="box_head__book">
               НОВОСТИ
@@ -178,13 +223,131 @@
                 <li><a href="">Доходность инвестирования ФНБ в банки будет выше инфляции / 15.12.14</a></li>
                 <li><a href="">Экс-глава ЦБ РФ: повышение ставки не спасет от валютных спекуляций / 03.12.14</a></li>
               </ul>
+              <a href="#" class="see_more">Смотреть все &#8594;</a>
             </div>
           </section>
+          <!-- / Новости -->
+
+
+          <!-- Статьи -->
+          <section class="box">
+            <header class="box_head__pencil">
+              СТАТЬИ
+            </header>
+            <div class="box_content">
+              <ul class="list_mod__sharp">
+                <li><a href="">Что такое договор цессии?</a></li>
+                <li><a href="">Заем до зарплаты: помощь или ловушка</a></li>
+                <li><a href="">Как уберечься от случайного снятия наличных с кредитки?</a></li>
+              </ul>
+              <a href="#" class="see_more">Смотреть все &#8594;</a>
+            </div>
+          </section>
+          <!-- / Статьи -->
+
+
+          <!-- Наши победы -->
+          <section class="box">
+            <header class="box_head__medal">
+              НАШИ ПОБЕДЫ
+            </header>
+            <div class="box_content">
+              <ul class="list_mod__eye">
+                <li>
+                  <a href="dist/img/five/15121401.JPG" rel="album1" class="fancybox">
+                    <span class="title">ООО "БМВ-Банк"</span>
+                    <span class="desc">Дело №2-3804/14</span>
+                  </a>
+                  <a href="dist/img/five/15121402.JPG" class="hidden fancybox" rel="album1"></a>
+                  <a href="dist/img/five/15121403.JPG" class="hidden fancybox" rel="album1"></a>
+                  <a href="dist/img/five/15121404.JPG" class="hidden fancybox" rel="album1"></a>
+                  <a href="dist/img/five/15121405.JPG" class="hidden fancybox" rel="album1"></a>
+                </li>
+                <li>
+                  <a href="dist/img/foo/10001.jpg" rel="album2" class="fancybox">
+                    <span class="title">Банк Хоум Кредит</span>
+                    <span class="desc">Дело № 2-2609/13</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dist/img/three/4001.jpg" rel="album3" class="fancybox">
+                    <span class="title">Райффайзен Банк</span>
+                    <span class="desc">Дело №2-1806/13</span>
+                  </a>
+                  <a href="dist/img/three/5001.jpg" class="hidden fancybox" rel="album3"></a>
+                </li>
+                <li>
+                  <a href="dist/img/six/28101401.JPG" rel="album4" class="fancybox">
+                    <span class="title">О взыскании денежных средств</span>
+                    <span class="desc">Дело №2-1806/13</span>
+                  </a>
+                  <a href="dist/img/six/28101402.JPG" class="hidden fancybox" rel="album4"></a>
+                  <a href="dist/img/six/28101403.JPG" class="hidden fancybox" rel="album4"></a>
+                  <a href="dist/img/six/28101404.JPG" class="hidden fancybox" rel="album4"></a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- / Наши победы -->
+
+
+
         </aside>
+        <!-- / Сайдбар -->
+
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="bash">
+            <span class="cont">Нет ничего столь совершенного, чтобы быть свободным от всяких упреков.</span>
+            <span class="author">Эзоп</span>
+          </div>          
+        </div>
       </div>
       
 
     </div>
+    </div>
+    <!-- / Основной контент -->
+
+
+
+    <!-- Футер -->
+    <div class="footer">
+      <div class="container_theme">
+        <div class="row">
+
+
+        <!-- Логотип  -->
+        <div class="col-sm-5">
+        <a href="#" class="footer_logo">
+          <img src="dist/img/footer_logo.png" alt="Безкредитофф" class="img-responsive">
+        </a>
+        </div>
+        <!-- Логотип  -->
+
+
+        <!-- Контакты -->
+        <div class="col-sm-5">
+          <div class="card_contact">
+            <span class="tel">8(800)333-58-34</span>
+            <span class="mode">
+              <i class="indicator"></i> <!-- <<<< добавлять класс off в нерабочее время -->
+              Пон - Пят c 10:00 - 20:00
+            </span>
+            <span class="desc">Заявки обрабатываются в рабочее время.</span>
+          </div>
+        </div>
+        <!-- / Контакты -->
+
+
+        </div>
+      </div>
+    </div>
+    <!-- / Футер -->
 
 
 
@@ -193,5 +356,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="dist/js/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    <script src="dist/js/response.min.js"></script>
+    <script src="dist/js/main.js"></script>
+
+    
   </body>
 </html>
