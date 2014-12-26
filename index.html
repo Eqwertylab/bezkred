@@ -87,7 +87,7 @@
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
-            <li class="open_order"><a href="#">Оставить заявку</a></li>
+            <li class="open_order"><a href="#" data-target="#modal" data-toggle="modal">Оставить заявку</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
 
@@ -152,8 +152,10 @@
       </div>
       <!-- / Слайдер -->
       
-      
+
+      <!-- Основной блок -->
       <div class="row">
+
 
 
         <!-- Контент -->
@@ -298,7 +300,10 @@
 
 
       </div>
+      <!-- / Основной блок -->
 
+
+      <!-- Цитата -->
       <div class="row">
         <div class="col-xs-12">
           <div class="bash">
@@ -307,7 +312,9 @@
           </div>          
         </div>
       </div>
-      
+      <!-- / Цитата -->
+
+
 
     </div>
     </div>
@@ -327,7 +334,7 @@
           <img src="dist/img/footer_logo.png" alt="Безкредитофф" class="img-responsive">
         </a>
         </div>
-        <!-- Логотип  -->
+        <!-- / Логотип  -->
 
 
         <!-- Контакты -->
@@ -348,6 +355,54 @@
       </div>
     </div>
     <!-- / Футер -->
+
+
+    <!-- Modal: form -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form role="form" class="form-modal"  id="form1">
+              <header>Оставьте заявку</header>
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя">
+              </div>
+              <div class="form-group">
+                <input type="tel" name="tel" class="form-control" id="tel" placeholder="Ваш телефон">
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="message" placeholder="Дополнительная информация" class="form-control"></textarea>
+              </div>
+              <input type="hidden" value="Форма в главном меню" name="submit"> 
+              <button type="submit" class="btn btn-lg btn-theme">Отправить заявку</button>
+            </form>
+            <button class="close-modal" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+            <div class="form-desc">В соответствии с законом № 152-ФЗ «О персональных данных», ваши персональные данные ни при каких обстоятельствах не будут переданы третьим лицам</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Modal: form -->
+
+
+
+    <!-- Modal: alert -->
+    <div class="modal fade" id="alert" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+
+              <header><!-- Заголовок --></header>
+              <p><!-- Описание --></p>
+              <button class="btn btn-lg btn-green" data-dismiss="modal">Закрыть</button>
+              <button class="close-modal" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Modal: alert -->
+
 
 
 

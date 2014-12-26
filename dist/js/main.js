@@ -11,7 +11,7 @@ App = {
 
 
 			App.Fun.fancy();				// Fancybox
-			//App.Fun.menu();					// Главное меню
+			App.Fun.menu();					// Главное меню
 
 
 
@@ -65,18 +65,15 @@ App = {
 				if(Response.band(768, 991)) { var offset_h = 124; }
 				if(Response.band(992)) { var offset_h = 143; }
 
-				var option = {
-					offset : {
-						top : offset_h
-					}
-				};
 
-				//$('body').affix(option);
-				$('body').affix({
-					offset : {
-						top : 100
+				$(window).scroll(function(){
+					if( !($(window).scrollTop() < offset_h) ) {
+						$('body').addClass('affix');
+					} else {
+						$('body').removeClass('affix');
 					}
 				});
+
 			});
 		}
 
