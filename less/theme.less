@@ -47,6 +47,7 @@ body {
 // 9.Footer
 // 10.Модальные окна
 // 11.Элементы формы
+// 12.Статья
 
 
 
@@ -123,6 +124,7 @@ body {
   .navbar-nav {
     > li > a {
       color: @navbar-inverse-link-color;
+      text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.75);
 
       &:hover,
       &:focus {
@@ -284,6 +286,18 @@ body {
 .ico-time{ background-position: 0 -520px; width: 16px; height: 19px; } 
 .ico-zoom{ background-position: 0 -544px; width: 46px; height: 47px; } 
 
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 
 //
@@ -443,6 +457,20 @@ h1,h2,h3,h4,h5,h6 {
     .ico-eye();
   }
 } 
+.list_mod__plus {
+  li {
+    padding-left: 23px;
+    margin-bottom: 10px;
+  }
+  
+  > li:before {
+    top:0.225rem;
+    content: " ";
+    display: block; 
+    background: @ico-bg;
+    .ico-plus();
+  }
+}
 [class^="box_head_"] {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
@@ -463,11 +491,20 @@ h1,h2,h3,h4,h5,h6 {
 .box_head__book:before {
   .ico-book();
 }
+.box_head__folder:before {
+  .ico-folder();
+}
 .box_head__pencil:before {
   .ico-pencil();
 }
 .box_head__medal:before {
   .ico-medal();
+}
+.box_head__zoom:before {
+  .ico-zoom();
+}
+.box_head__zoom {
+  margin-bottom: 0;
 }
 
 
@@ -646,6 +683,63 @@ textarea.form-control {
   &:hover,
   &:focus {
     #gradient > .vertical(@start-color: #7caa00; @end-color: #76a100; @start-percent: 0%; @end-percent: 100%);
+  }
+}
+  // Форма поиска
+  .form-search {
+    .clearfix();
+    .col-input {
+      float: left;
+      margin-right: 2%;
+      width: 58%;
+    }
+    .col-button {
+      width: 20%;
+      float: left;
+    }
+    .form-control {
+      height: 2.7rem;
+    }
+  }
+
+
+
+
+
+//
+// 12.Статья
+// --------------------------------------------------
+.article {
+  border-bottom: 1px solid #e4e0db;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  summary {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  [class^="sum_"]{ 
+    white-space: nowrap;
+    margin-right: 1rem;
+    display: inline-block;
+    overflow: hidden;
+    &:before {
+      .glyphicon();
+      margin-right: 3px;
+    }
+  }
+  .sum__date:before { content: "\e109"; }
+  .sum__author:before { content: "\e008"; }
+  .sum__cat {
+    text-overflow: ellipsis;
+    width: 100px;
+  }
+  .sum__cat:before { content: "\e118"; }
+  .sum__view:before { content: "\e105"; }
+  .sum__comment:before { content: "\e111"; }
+  .see_more {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
   }
 }
 
