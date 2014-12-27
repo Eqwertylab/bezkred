@@ -47,6 +47,7 @@ body {
 // 10.Модальные окна
 // 11.Элементы формы
 // 12.Статья
+// 13.Облако тегов
 
 
 
@@ -503,6 +504,9 @@ h1,h2,h3,h4,h5,h6 {
 .box_head__zoom:before {
   .ico-zoom();
 }
+.box_head__tag:before {
+  .ico-tag();
+}
 .box_head__zoom {
   margin-bottom: 0;
 }
@@ -704,8 +708,6 @@ textarea.form-control {
 
 
 
-
-
 //
 // 12.Статья
 // --------------------------------------------------
@@ -742,7 +744,29 @@ textarea.form-control {
     margin-top: 10px;
   }
 }
+.atricle_tags{
+  margin-top: 10px;
+  display: block;
+  &:before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    background: @ico-bg;
+    .ico-small-tag();
+  }
+}
 
+
+
+//
+// 13.Облако тегов
+// --------------------------------------------------
+.tags_cloud {text-align: center;line-height: 1.2rem}
+.tl-tag-weght1 {font-size: 0.75rem}
+.tl-tag-weght2 {font-size: 0.875rem}
+.tl-tag-weght3 {font-size: 1rem}
+.tl-tag-weght4 {font-size: 1.125em}
+.tl-tag-weght5 {font-size: 1.25em}
 
 
 
