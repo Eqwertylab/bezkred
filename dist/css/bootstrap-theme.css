@@ -20,7 +20,6 @@ body {
 }
 .main_wrap {
   background: #fff;
-  padding-top: 15px;
 }
 .header_wrap {
   background: url('../img/skin.png') repeat-x left bottom;
@@ -299,6 +298,7 @@ fieldset[disabled] .navbar-theme .btn-link:focus {
 }
 #carousel-example-generic {
   background: #eaeaea;
+  margin-top: 15px;
 }
 .slide-desc {
   padding: 1rem;
