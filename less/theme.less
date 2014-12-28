@@ -491,9 +491,11 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 0 0 0 40px;
+  line-height: 1.6rem;
+  padding: 6px 0 0 40px;
   position: relative;
   margin-bottom: 15px;
+  min-height: 2.25rem;
 
   &:before {
     position: absolute;
@@ -506,6 +508,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 .box_head__book:before {
   .ico-book();
+}
+.box_head__map:before {
+  .ico-pin-map();
 }
 .box_head__folder:before {
   .ico-folder();
@@ -525,7 +530,32 @@ h1,h2,h3,h4,h5,h6 {
 .box_head__zoom {
   margin-bottom: 0;
 }
+[class^="icon_"] {
+  position: relative;
+  display: block;
+  padding-left: 23px;   
+  margin-bottom: 10px;
 
+    &:before {
+      background: @ico-bg;
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+}
+.icon__point:before {
+  .ico-location();
+}
+.icon__tahom:before {
+  .ico-time();
+}
+.icon__phone:before {
+  .ico-phone();
+}
 
 
 //
@@ -948,6 +978,16 @@ textarea.form-control {
   text-align: center;
   font-weight: normal;
 }
+
+
+
+//
+// 16.Контакты
+// --------------------------------------------------
+.map {
+  margin: 15px 0;
+}
+
 
 
 
