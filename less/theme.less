@@ -48,6 +48,9 @@ body {
 // 11.Элементы формы
 // 12.Статья
 // 13.Облако тегов
+// 14.Табы с услугами
+// 15.Панели с услугами
+
 
 
 
@@ -285,6 +288,18 @@ body {
 .ico-tag{ background-position: 0 -465px; width: 50px; height: 50px; } 
 .ico-time{ background-position: 0 -520px; width: 16px; height: 19px; } 
 .ico-zoom{ background-position: 0 -544px; width: 46px; height: 47px; } 
+
+@sico-bg : url('../img/csg-549e9a202002a.png') no-repeat top left;
+.sico-check{ 
+  .center-block();
+  background: @sico-bg;
+  background-position: 0 0; width: 76px; height: 77px; 
+} 
+.sico-error{ 
+  .center-block();
+  background: @sico-bg;
+  background-position: 0 -82px; width: 76px; height: 77px; 
+} 
 
 .glyphicon {
   position: relative;
@@ -608,6 +623,7 @@ h1,h2,h3,h4,h5,h6 {
 // --------------------------------------------------
 .footer {
   padding: 1.5rem 0;
+  border-top: 1px solid #e4e0db;
 }
 .footer_logo > img {
   .center-block();
@@ -767,6 +783,171 @@ textarea.form-control {
 .tl-tag-weght3 {font-size: 1rem}
 .tl-tag-weght4 {font-size: 1.125em}
 .tl-tag-weght5 {font-size: 1.25em}
+
+
+
+//
+// 14.Табы с услугами
+// --------------------------------------------------
+.nav-tabs {
+  margin-top: 15px;
+  border-bottom: 1px solid @nav-tabs-border-color;
+  > li {
+    width: 50%;
+    position: relative;
+    bottom: -10px;
+    > a { 
+      outline: none !important; 
+      opacity: 0.8;
+      color: @text-color;
+      background: #f8f8f8;
+      border-color: #dddddd #dddddd #dddddd;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+    &.active {
+      bottom: 0px;
+      > a {      
+        opacity: 1;  
+        padding: 15px 15px;
+      }      
+    }
+  }
+}
+.tab-content {
+  background: #f3f1ef;
+  padding: 15px;
+}
+.tab_title {
+  display: block;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+
+
+//
+// 15.Панели с услугами
+// --------------------------------------------------
+.panel-group {
+  .panel-service {
+    border-radius: 0;
+  }
+  .panel-heading {
+    padding: 10px 15px 10px 50px;
+    display: block;
+    border-bottom: 1px solid #dddddd;
+    position: relative;
+    overflow: hidden;
+    color: @text-color;
+
+    &:before {
+      .glyphicon();
+      position: absolute;
+      content: "\2212";
+      display: block;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding: 13px 10px;
+      border-right: 1px solid #ddd;
+      text-align: center;
+      color: @link-color;
+    }
+    &.collapsed:before {
+      content: "\2b";
+    }
+  }
+}
+.panel {
+  border: 1px solid #dddddd;
+  border-radius: 0;
+}
+
+
+
+//
+// 15.Форма - конфигуратор
+// --------------------------------------------------
+.configurator {
+  margin-top: 15px;
+  .center-block();
+}
+.cheader {
+  text-align: center;
+  margin-bottom: 15px;
+
+  .line1 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.25rem;
+  }
+  .line2 {
+    font-size: 0.875rem;
+  }
+}
+.row-small {
+  margin: 0 -7.5px;
+  .clearfix();
+
+  [class^="col-"] {
+    padding: 0 7.5px;
+  }
+}
+.row-small-table {
+  margin: 0 -7.5px 15px -7.5px;
+  .clearfix();
+
+  [class^="col-"] {
+    padding: 0 7.5px;
+  }
+}
+.checkbox-mod {
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked + label:before {content: "\e067";}
+  label {
+    white-space: nowrap;
+    font-weight: normal;
+    cursor: pointer;
+
+    &:before {
+      display: inline-block;
+      top:2px;
+      .glyphicon();
+      content: "\e157";
+      margin-right: 2px;
+    }
+  }
+}
+//  Слайдер
+.ui-slider .ui-slider-handle {
+  background: url('../js/jquery-ui-1.11.2.custom/images/slider-handle.png') no-repeat center center;
+  width: 25px;
+  height: 31px;
+  border: none;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  top: -0.6rem;
+}
+.minbeds {
+  display: none;
+}
+.stoltip {
+  display: inline-block;
+  position: absolute;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: #000; 
+  color: #fff;
+  width: 7rem;
+  bottom: -1.75rem;
+  left: -2.8rem;
+  text-align: center;
+  font-weight: normal;
+}
 
 
 

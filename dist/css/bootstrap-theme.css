@@ -285,6 +285,24 @@ fieldset[disabled] .navbar-theme .btn-link:focus {
   width: 46px;
   height: 47px;
 }
+.sico-check {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../img/csg-549e9a202002a.png') no-repeat top left;
+  background-position: 0 0;
+  width: 76px;
+  height: 77px;
+}
+.sico-error {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../img/csg-549e9a202002a.png') no-repeat top left;
+  background-position: 0 -82px;
+  width: 76px;
+  height: 77px;
+}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -582,6 +600,7 @@ h6 {
 }
 .footer {
   padding: 1.5rem 0;
+  border-top: 1px solid #e4e0db;
 }
 .footer_logo > img {
   display: block;
@@ -772,6 +791,176 @@ textarea.form-control {
 .tl-tag-weght5 {
   font-size: 1.25em;
 }
+.nav-tabs {
+  margin-top: 15px;
+  border-bottom: 1px solid #dddddd;
+}
+.nav-tabs > li {
+  width: 50%;
+  position: relative;
+  bottom: -10px;
+}
+.nav-tabs > li > a {
+  outline: none !important;
+  opacity: 0.8;
+  color: #444444;
+  background: #f8f8f8;
+  border-color: #dddddd #dddddd #dddddd;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  opacity: 1;
+}
+.nav-tabs > li.active {
+  bottom: 0px;
+}
+.nav-tabs > li.active > a {
+  opacity: 1;
+  padding: 15px 15px;
+}
+.tab-content {
+  background: #f3f1ef;
+  padding: 15px;
+}
+.tab_title {
+  display: block;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.panel-group .panel-service {
+  border-radius: 0;
+}
+.panel-group .panel-heading {
+  padding: 10px 15px 10px 50px;
+  display: block;
+  border-bottom: 1px solid #dddddd;
+  position: relative;
+  overflow: hidden;
+  color: #444444;
+}
+.panel-group .panel-heading:before {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  content: "\2212";
+  display: block;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 13px 10px;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  color: #ff5757;
+}
+.panel-group .panel-heading.collapsed:before {
+  content: "\2b";
+}
+.panel {
+  border: 1px solid #dddddd;
+  border-radius: 0;
+}
+.configurator {
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cheader {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.cheader .line1 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.25rem;
+}
+.cheader .line2 {
+  font-size: 0.875rem;
+}
+.row-small {
+  margin: 0 -7.5px;
+}
+.row-small:before,
+.row-small:after {
+  content: " ";
+  display: table;
+}
+.row-small:after {
+  clear: both;
+}
+.row-small [class^="col-"] {
+  padding: 0 7.5px;
+}
+.row-small-table {
+  margin: 0 -7.5px 15px -7.5px;
+}
+.row-small-table:before,
+.row-small-table:after {
+  content: " ";
+  display: table;
+}
+.row-small-table:after {
+  clear: both;
+}
+.row-small-table [class^="col-"] {
+  padding: 0 7.5px;
+}
+.checkbox-mod input[type="radio"] {
+  display: none;
+}
+.checkbox-mod input[type="radio"]:checked + label:before {
+  content: "\e067";
+}
+.checkbox-mod label {
+  white-space: nowrap;
+  font-weight: normal;
+  cursor: pointer;
+}
+.checkbox-mod label:before {
+  top: 2px;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e157";
+  margin-right: 2px;
+}
+.ui-slider .ui-slider-handle {
+  background: url('../js/jquery-ui-1.11.2.custom/images/slider-handle.png') no-repeat center center;
+  width: 25px;
+  height: 31px;
+  border: none;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  top: -0.6rem;
+}
+.minbeds {
+  display: none;
+}
+.stoltip {
+  display: inline-block;
+  position: absolute;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  width: 7rem;
+  bottom: -1.75rem;
+  left: -2.8rem;
+  text-align: center;
+  font-weight: normal;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   html {
@@ -881,6 +1070,16 @@ textarea.form-control {
   }
   .footer_logo > img {
     float: left;
+  }
+  .configurator {
+    width: 90%;
+  }
+  .col-table {
+    display: table-cell;
+  }
+  .row-small-table {
+    display: table;
+    width: 100%;
   }
 }
 /* Medium devices (desktops, 992px and up) */

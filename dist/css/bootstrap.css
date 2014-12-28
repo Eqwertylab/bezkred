@@ -2340,7 +2340,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 3rem;
+  height: 2.75rem;
   padding: 6px 12px;
   font-size: 1rem;
   line-height: 1.42857143;
@@ -2389,7 +2389,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"],
   input[type="month"] {
-    line-height: 3rem;
+    line-height: 2.75rem;
   }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
@@ -2520,7 +2520,7 @@ select[multiple].form-group-lg .form-control {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 3.75rem;
+  padding-right: 3.4375rem;
 }
 .form-control-feedback {
   position: absolute;
@@ -2528,9 +2528,9 @@ select[multiple].form-group-lg .form-control {
   right: 0;
   z-index: 2;
   display: block;
-  width: 3rem;
-  height: 3rem;
-  line-height: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
   text-align: center;
   pointer-events: none;
 }
@@ -3680,7 +3680,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #ffffff;
+  background-color: #f3f1ef;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4017,8 +4017,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 23.5px;
-  margin-bottom: 23.5px;
+  margin-top: 23.625px;
+  margin-bottom: 23.625px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -4102,8 +4102,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 23.5px;
-  margin-bottom: 23.5px;
+  margin-top: 23.625px;
+  margin-bottom: 23.625px;
 }
 .navbar-btn.btn-sm {
   margin-top: 18.5px;

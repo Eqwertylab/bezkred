@@ -12,6 +12,8 @@ App = {
 
 			App.Fun.fancy();				// Fancybox
 			App.Fun.menu();					// Главное меню
+			App.Fun.form_slider('minbeds', 'slider1');			// Слайдер в форме-конфигураторе таба 1 (id селекта, id слайдера) 
+			App.Fun.form_slider('minbeds2', 'slider2');			// Слайдер в форме-конфигураторе таба 1 (id селекта, id слайдера) 
 
 
 
@@ -74,6 +76,36 @@ App = {
 					}
 				});
 
+			});
+		},
+
+
+
+		//
+		// Слайдер в форме-конфигураторе
+		// --------------------------------------------------
+		form_slider : function(selectid,sliderid) {
+			var stoltip = $('<span class="stoltip"></span>');
+			var select = $( '#'+selectid );
+			var slider = $( "<div id='"+sliderid+"'></div>" ).insertAfter( select ).slider({
+				min: 1,
+				max: 6,
+				range: "min",
+				value: select[ 0 ].selectedIndex + 1,
+				slide: function( event, ui ) {
+					select[ 0 ].selectedIndex = ui.value - 1;
+					$(stoltip)
+						.text(select.val());
+				},
+				create: function( event, ui ) {
+					var thishandle = $('#' + sliderid + ' .ui-slider-handle');
+					$(stoltip)
+						.text(select.val())
+						.appendTo(thishandle);
+				}
+			});
+			$( selectid ).change(function() {
+				slider.slider( "value", this.selectedIndex + 1 );
 			});
 		}
 
