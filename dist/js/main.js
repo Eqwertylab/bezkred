@@ -88,30 +88,43 @@ App = {
 		// Слайдер в форме-конфигураторе
 		// --------------------------------------------------
 		form_slider : function(selectid,sliderid) {
-			var stoltip = $('<span class="stoltip"></span>');
-			var select = $( '#'+selectid );
-			if(select.length > 0) {
-				var slider = $( "<div id='"+sliderid+"'></div>" ).insertAfter( select ).slider({
-					min: 1,
-					max: 6,
-					range: "min",
-					value: select[ 0 ].selectedIndex + 1,
-					slide: function( event, ui ) {
-						select[ 0 ].selectedIndex = ui.value - 1;
-						$(stoltip)
-							.text(select.val());
-					},
-					create: function( event, ui ) {
-						var thishandle = $('#' + sliderid + ' .ui-slider-handle');
-						$(stoltip)
-							.text(select.val())
-							.appendTo(thishandle);
-					}
-				});
-				$( selectid ).change(function() {
-					slider.slider( "value", this.selectedIndex + 1 );
-				});	
+			
+			if(!jQuery.browser.mobile) {
+				var select = $( '#'+selectid );
+				var stoltip = $('<span class="stoltip"></span>');
+				if(select.length > 0) {
+					var slider = $( "<div id='"+sliderid+"'></div>" ).insertAfter( select ).slider({
+						min: 1,
+						max: 6,
+						range: "min",
+						value: select[ 0 ].selectedIndex + 1,
+						slide: function( event, ui ) {
+							select[ 0 ].selectedIndex = ui.value - 1;
+							$(stoltip)
+								.text(select.val());
+						},
+						create: function( event, ui ) {
+							var thishandle = $('#' + sliderid + ' .ui-slider-handle');
+							$(stoltip)
+								.text(select.val())
+								.appendTo(thishandle);
+						}
+					});
+					$( selectid ).change(function() {
+						slider.slider( "value", this.selectedIndex + 1 );
+					});	
+				}
+			} else {
+				var mselect = $('<select name="minbeds" class="form-control"></select>');
+				$( '#'+selectid )
+					.find('option')
+					.each(function(index, el) {
+						$('<option value="'+$(el).val()+'">'+$(el).val()+'</option>').appendTo(mselect);
+					});
+				$( '#'+selectid ).after(mselect);
+				$( '#'+selectid ).remove();	
 			}
+			
 			
 		},
 

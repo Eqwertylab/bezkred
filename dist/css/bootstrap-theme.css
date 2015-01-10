@@ -974,6 +974,9 @@ textarea.form-control {
   content: "\e157";
   margin-right: 2px;
 }
+.minbeds {
+  display: none;
+}
 .ui-slider .ui-slider-handle {
   background: url('../js/jquery-ui-1.11.2.custom/images/slider-handle.png') no-repeat center center;
   width: 25px;
@@ -983,21 +986,33 @@ textarea.form-control {
 .ui-slider-horizontal .ui-slider-handle {
   top: -0.6rem;
 }
-.minbeds {
-  display: none;
-}
 .stoltip {
   display: inline-block;
   position: absolute;
-  padding: 1px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   background: #000;
   color: #fff;
   width: 7rem;
-  bottom: -1.75rem;
+  bottom: -2.1rem;
   left: -2.8rem;
   text-align: center;
   font-weight: normal;
+}
+.stoltip:before {
+  content: " ";
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  position: absolute;
+  background: #000;
+  top: -0.1rem;
+  left: 50%;
+  margin-left: -0.1rem;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .map {
   margin: 15px 0;
@@ -1153,6 +1168,9 @@ textarea.form-control {
     float: left;
     margin-right: 2%;
     width: 68%;
+  }
+  .stoltip:before {
+    margin-left: -0.248rem;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
