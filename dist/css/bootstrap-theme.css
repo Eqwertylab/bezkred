@@ -1017,6 +1017,18 @@ textarea.form-control {
 .map {
   margin: 15px 0;
 }
+.head-page-tools {
+  margin-top: 16px;
+}
+.breadcrumb {
+  margin-bottom: 0;
+  background: none;
+  color: #777777;
+}
+.breadcrumb > li + li:before {
+  content: "";
+  padding: 0px;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   html {
