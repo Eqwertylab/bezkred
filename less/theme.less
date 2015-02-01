@@ -52,6 +52,7 @@ body {
 // 15.Панели с услугами
 // 16.Контакты
 // 17.Breadcrumb
+// 18.Похожие статьи
 
 
 
@@ -768,6 +769,10 @@ textarea.form-control {
   border-bottom: 1px solid #e4e0db;
   padding-bottom: 15px;
   margin-bottom: 20px;
+  &.__open {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
   summary {
     font-size: 0.875rem;
     opacity: 0.8;
@@ -1030,6 +1035,50 @@ textarea.form-control {
     content: "";
     padding: 0px;
   }
+}
+
+
+
+//
+// 18.Похожие статьи
+// --------------------------------------------------
+.sim_article_header {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.5rem;
+}
+.sim_article {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-width: 360px;
+  .center-block();
+}
+.sim_article_item {
+  &:hover {
+    a {
+      text-decoration: underline;
+    }
+    img {
+      border-color: @link-color;
+    }
+  }
+}
+.sim_article_img {
+  display: block;
+  > img {
+    max-width: 100%;
+    border: 0.4rem solid @gray-lighter;
+  }
+  &:hover > img {
+    border-color: @link-color;
+  }
+}
+.sim_article_title {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  line-height: 0.95rem;
+  margin-bottom: 15px;
 }
 
 
