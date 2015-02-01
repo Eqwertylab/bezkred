@@ -95,7 +95,7 @@ App = {
 				if(select.length > 0) {
 					var slider = $( "<div id='"+sliderid+"'></div>" ).insertAfter( select ).slider({
 						min: 1,
-						max: 6,
+						max: 4,
 						range: "min",
 						value: select[ 0 ].selectedIndex + 1,
 						slide: function( event, ui ) {

@@ -377,6 +377,11 @@ h6 {
   margin: 1rem 0;
   padding: 10px 0;
 }
+.box.__transparent {
+  border: none;
+  background: none;
+  padding: 0;
+}
 .box a {
   color: #444444;
 }
@@ -989,15 +994,18 @@ textarea.form-control {
 .stoltip {
   display: inline-block;
   position: absolute;
-  padding: 3px 8px;
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+  padding: 3px 3px;
   border-radius: 4px;
   background: #000;
   color: #fff;
   width: 7rem;
-  bottom: -2.1rem;
+  bottom: -2.45rem;
   left: -2.8rem;
   text-align: center;
   font-weight: normal;
+  height: 34.8px;
 }
 .stoltip:before {
   content: " ";
@@ -1006,7 +1014,7 @@ textarea.form-control {
   height: 0.625rem;
   position: absolute;
   background: #000;
-  top: -0.1rem;
+  top: -0.3rem;
   left: 50%;
   margin-left: -0.1rem;
   -webkit-transform: rotate(45deg);
@@ -1019,11 +1027,14 @@ textarea.form-control {
 }
 .head-page-tools {
   margin-top: 16px;
+  white-space: nowrap;
 }
 .breadcrumb {
+  padding: 0 15px 0 0;
   margin-bottom: 0;
   background: none;
   color: #777777;
+  overflow: hidden;
 }
 .breadcrumb > li + li:before {
   content: "";
