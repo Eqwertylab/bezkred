@@ -11,6 +11,7 @@ App = {
 
 
 			App.Fun.fancy();								// Fancybox
+			App.Fun.calc();									// Калькулятор DTI
 			App.Fun.menu();									// Главное меню
 			App.Fun.form_slider('minbeds', 'slider1');		// Слайдер в форме-конфигураторе таба 1 (id селекта, id слайдера) 
 			App.Fun.form_slider('minbeds2', 'slider2');		// Слайдер в форме-конфигураторе таба 2 
@@ -29,6 +30,90 @@ App = {
 	// Все функции
 	// --------------------------------------------------
 	Fun : {
+
+
+
+		//
+		// Калькулятор DTI
+		// --------------------------------------------------
+		calc : function() {
+			var answers = {
+				norm : {
+					answer_text : 'Ваш показатель в пределах нормы. Узнайте как избежать проблем в будущем.',
+					link_text : 'Получить бесплатную консультацию'
+				},
+
+				kritik : {
+					answer_text : 'Ваш показатель находится на критическом уровне. Вам необходима оптимизация Вашей задолженности',
+					link_text : 'Оптимизировать задолженность'
+				},
+
+				opasno : {
+					answer_text : 'Опасно критический. Вам необходима оптимизация Вашей задолженности',
+					link_text : 'Оптимизировать задолженность'
+				}
+			}
+
+			var $calc = $('#calc_btn'),
+				$dohodInp = $('#dohod'),
+				$rashodInp = $('#rashod'),
+				$dtiOut = $('#calc-dti'),
+				$answerOut = $('#calc-answer');
+				$linkOut = $('#calc-link');
+
+			var answer = 'Введите показатели';
+
+			$calc.click(function(event) {
+				event.preventDefault();
+				$('#calc-inner').slideDown('slow/400/fast', function() {
+					$calc.addClass('disabled');
+				});
+			});
+
+			$dohodInp.keyup(function(event) {
+				calcDti($(this).val(), $rashodInp.val());
+			});	
+			$rashodInp.keyup(function(event) {
+				calcDti($dohodInp.val(), $(this).val());
+			});	
+
+			function isNumber(arg) {
+				return !isNaN(+arg);
+			}
+
+			function calcDti (dohod, rashod) {
+				var answer, link, dti_uroven;
+
+				dohod = parseInt(dohod);
+				rashod = parseInt(rashod);
+				var dti = parseInt((rashod / dohod)*100);
+				
+				if (isNumber(dti)) {
+					if(dti >= 0 && dti <= 30) {
+						dti_uroven = 'norm';
+					} else if(dti > 30 && dti <= 50) {
+						dti_uroven = 'kritik';
+					} else if (dti > 50) {
+						dti_uroven = 'opasno';
+					} else {
+						answer = 'Введите показатели'
+					}
+
+					answer = answers[dti_uroven].answer_text;
+					link = answers[dti_uroven].link_text;
+
+					$dtiOut.text(dti+'%');
+					$answerOut.text(answer);
+					$linkOut.text(link);
+				} else {
+					$dtiOut.text('');
+					$answerOut.text('');
+					$linkOut.text('');
+				}
+				
+			}	
+
+		},
 
 
 
