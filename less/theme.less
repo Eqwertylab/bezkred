@@ -58,6 +58,37 @@ body {
 
 
 //
+// 19.Достоинства
+// --------------------------------------------------
+.dignity {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  .center-block();
+  max-width: 500px;
+}
+.dignity-item {
+  position: relative;
+  padding: 0 0 0.4rem 75px;
+}
+.dignity-icon {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: block;
+  background-image: url(../img/csg-54cef19f9f1ba.png);
+  background-repeat: no-repeat;
+}
+.dignity-title {
+  font-size: 1.125rem;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
+.dignity-desc {
+  line-height: 1.2rem;
+}
+
+//
 // 1.Header
 // --------------------------------------------------
 .header_wrap {
@@ -68,7 +99,13 @@ body {
 }
 .header_logo > img {
   max-height: 65px;
+  width: 100%;
+  max-width: 280px;
   .center-block();
+}
+.header_descriptor {
+  margin-top: 0.5rem;
+  text-align: center;
 }
 .card_contact {
   text-align: center;
@@ -180,7 +217,7 @@ body {
       &,
       &:hover,
       &:focus {
-        background-color: @navbar-inverse-link-active-bg;
+        background-color: #141414;
         color: @navbar-inverse-link-active-color;
       }
     }
@@ -188,17 +225,18 @@ body {
     @media (max-width: @grid-float-breakpoint-max) {
       // Dropdowns get custom display
       .open .dropdown-menu {
+        
         > .dropdown-header {
           border-color: @navbar-inverse-border;
         }
         .divider {
-          background-color: @navbar-inverse-border;
+          background-color: #141414;
         }
         > li > a {
-          color: @navbar-inverse-link-color;
+          color: #fff;
           &:hover,
           &:focus {
-            color: @navbar-inverse-link-hover-color;
+            color: @brand-primary;
             background-color: @navbar-inverse-link-hover-bg;
           }
         }
@@ -206,8 +244,8 @@ body {
           &,
           &:hover,
           &:focus {
-            color: @navbar-inverse-link-active-color;
-            background-color: @navbar-inverse-link-active-bg;
+            color: @brand-primary;
+            background-color: #323232;
           }
         }
         > .disabled > a {
@@ -250,6 +288,24 @@ body {
     background-position: 0 -415px; width: 28px; height: 28px; 
     vertical-align: middle;
   } 
+}
+.dropdown-menu {
+  background: #141414;
+  border-radius: 0;
+
+  li {
+
+    a {
+      color: #fff;
+
+    }
+
+    &:active a,
+    &:hover a {
+      color: @link-color;
+      background: #000000;
+    }
+  }
 }
 .affix {
   position: inherit;
@@ -926,6 +982,9 @@ textarea.form-control {
 //
 // 15.Форма - конфигуратор
 // --------------------------------------------------
+.br_uzor {
+  margin: 35px 0;
+}
 .configurator {
   margin-top: 15px;
   .center-block();
@@ -959,10 +1018,10 @@ textarea.form-control {
   }
 }
 .checkbox-mod {
-  input[type="radio"] {
+  input[type="checkbox"] {
     display: none;
   }
-  input[type="radio"]:checked + label:before {content: "\e067";}
+  input[type="checkbox"]:checked + label:before {content: "\e067";}
   label {
     white-space: nowrap;
     font-weight: normal;
@@ -989,6 +1048,9 @@ textarea.form-control {
 }
 .ui-slider-horizontal .ui-slider-handle {
   top: -0.6rem;
+}
+.ui-slider {
+  margin-bottom: 50px;
 }
 .stoltip {
   display: inline-block;
@@ -1170,27 +1232,10 @@ img + .nophoto {
     .img-hot-article {
       border-color: @link-color;
     }
-
-    .blind {
-      display: none;
-    }
   }
 }
 .wrap-img-hot-article {
   position: relative;
-
-  .blind {
-    color: #fff;
-    text-align: center;
-    font-size: 10rem;
-    font-weight: 800;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 87, 87, 0.5);
-  }
 }
 
 .img-hot-article {
@@ -1208,6 +1253,63 @@ img + .nophoto {
 
 
 
+//
+// 22. Галерея наши победы
+// --------------------------------------------------
+.docs {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+    .scan {
+      display: block;
+      padding: 20px;
+      background: url('../img/ramka.png') no-repeat 0 0;
+      width: 176px;
+      height: 233px;
+      overflow: hidden;
+      .center-block();
+    }
+    .title {
+      white-space: nowrap;
+    }
+    .num {
+      white-space: nowrap;
+    }
+    .hidden {
+      display: none;
+    }
+}
+
+
+//
+// 21. GoogleDocx
+// --------------------------------------------------
+.embed-responsive {
+  
+
+  // Modifier class for Google Docx
+  &.embed-responsive-doc {
+    overflow: visible; 
+    padding-bottom: 700px;
+
+    .embed-responsive-item {
+      margin-left: -10%;
+      width: 110%;
+    }
+  }
+
+  &.embed-responsive-doc-list {
+    overflow: hidden;
+    padding-bottom: 700px;
+    .embed-responsive-item {
+      width: 648px;
+      margin-left: -15px;
+    }
+  }
+
+}
 
 
 @import "theme768up.less";

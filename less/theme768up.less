@@ -34,7 +34,7 @@ html {
 // --------------------------------------------------
 .header_wrap {
   height: 170px;
-  padding-top: 10px;
+  padding-top: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .header_wrap .card_contact {
@@ -46,8 +46,12 @@ html {
 }
 .header_logo > img {
   max-height: 100%;
+  float: left;
+  margin-top: 0.4rem;
 }
-
+.header_descriptor {
+  text-align: left;
+}
 
 
 //
@@ -70,8 +74,9 @@ html {
     width: 100%;
 
     > li > a {
-      padding: 10px 13px;
       background-color: transparent;
+      font-size: 1.1rem;
+      padding: 10px 9px;
 
       &:hover,
       &:focus {
@@ -88,7 +93,7 @@ html {
       }
     }
     > .open_order {
-      font-size: 1.1rem;
+      font-size: 1rem;
       float: right;
       > a {
         padding-top: 5px; 
@@ -216,6 +221,28 @@ html {
     text-align: center;
     font-size: 7rem;
     line-height: 7rem;
+  }
+}
+
+
+//
+// 8. Галерея наши победы
+// --------------------------------------------------
+.docs {
+  text-align: center;
+  vertical-align: top;
+
+  .title {
+    margin-left: -20px;
+    margin-right: -20px;
+    white-space: normal;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    width: 176px;
+    margin: 20px 25px;
   }
 }
 

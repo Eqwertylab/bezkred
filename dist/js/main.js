@@ -151,9 +151,9 @@ App = {
 			//Фиксируем главное меню при скролинге
 			Response.action(function(){
 
-				if(Response.band(0, 767)) {	var offset_h = 156; }
+				if(Response.band(0, 767)) {	var offset_h = 199; }
 				if(Response.band(768, 991)) { var offset_h = 124; }
-				if(Response.band(992)) { var offset_h = 143; }
+				if(Response.band(992)) { var offset_h = 128; }
 
 
 				$(window).scroll(function(){
