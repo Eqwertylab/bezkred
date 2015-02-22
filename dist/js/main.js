@@ -9,7 +9,8 @@ App = {
 		$(document).ready(function(){
 
 
-
+			App.Fun.isotop_video();							// Изотоп
+			App.Fun.fancy_video();							// Fancybox - в видео галерее
 			App.Fun.fancy();								// Fancybox
 			App.Fun.calc();									// Калькулятор DTI
 			App.Fun.menu();									// Главное меню
@@ -17,7 +18,6 @@ App = {
 			App.Fun.form_slider('minbeds2', 'slider2');		// Слайдер в форме-конфигураторе таба 2 
 			//App.Fun.map.mload('App.Fun.map.options1');		// Схемы проезда 1
 			//App.Fun.map.mload('App.Fun.map.options2');		// Схемы проезда 2
-
 
 
 
@@ -30,6 +30,42 @@ App = {
 	// Все функции
 	// --------------------------------------------------
 	Fun : {
+
+
+
+		//
+		// Видео изотоп
+		// --------------------------------------------------
+		isotop_video: function() {
+			$container = $('#video-container');
+
+			$container.isotope({
+				itemSelector: '.video-item',
+				layoutMode: 'fitRows'
+			});	
+
+			$('#video-filter').on( 'click', 'button', function() {
+				var filterValue = $(this).attr('data-filter');
+				$container.isotope({ filter: filterValue });
+				$('#video-filter').find('button').removeClass('active');
+				$(this).addClass('active');
+			});
+		},
+
+
+
+		//
+		// Видео галерея - воспроизведение
+		// --------------------------------------------------
+		fancy_video : function() {
+			$('.video-item').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+				helpers : {
+					media : {}
+				}
+			});
+		},
 
 
 

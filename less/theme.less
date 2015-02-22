@@ -1312,6 +1312,59 @@ img + .nophoto {
 }
 
 
+//
+// Видео галерея
+// --------------------------------------------------
+.video-filter {
+  margin-bottom: 20px;
+}
+.video-container {
+  .make-row(@gutter: 20px);
+}
+.video-item {
+  .make-sm-column(6; @gutter: 20px);
+  .make-md-column(4; @gutter: 20px);
+  cursor: pointer;
+  height: 12.56rem;
+  margin-bottom: 15px;
+  max-width: 245px;
+}
+.video-preview {
+  height: 9.6875rem;
+  background: url(../img/novideo.png) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  border: 0.4rem solid @gray-lighter;
+  position: relative;
+  
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 48px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    margin: -30px 0 0 -24px;
+    background: url(../img/play.png) no-repeat left top;
+    opacity: 0.3;
+  }
+  
+  &.active:before,
+  &:hover:before {
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    height: 9.6875rem;
+  }
+}
+.video-title {
+  text-align: center;
+  line-height: 1.2rem;
+  padding: 3px 0;
+}
+
 @import "theme768up.less";
 @import "theme992up.less";
 @import "theme1200up.less";
