@@ -9,8 +9,10 @@ App = {
 		$(document).ready(function(){
 
 
-			App.Fun.isotop_video();							// Изотоп
+			App.Fun.isotop_media();							// Изотоп медиа
+			App.Fun.isotop_video();							// Изотоп видео
 			App.Fun.fancy_video();							// Fancybox - в видео галерее
+			App.Fun.fancy_media();							// Fancybox - Медиа галерея
 			App.Fun.fancy();								// Fancybox
 			App.Fun.calc();									// Калькулятор DTI
 			App.Fun.menu();									// Главное меню
@@ -34,10 +36,31 @@ App = {
 
 
 		//
+		// Медиа изотоп
+		// --------------------------------------------------
+		isotop_media : function() {
+			var $container = $('#media-container');
+
+			$container.isotope({
+				itemSelector: '.media-item',
+				layoutMode: 'fitRows'
+			});	
+
+			$('#media-filter').on( 'click', 'button', function() {
+				var filterValue = $(this).attr('data-filter');
+				$container.isotope({ filter: filterValue });
+				$('#media-filter').find('button').removeClass('active');
+				$(this).addClass('active');
+			});
+		},
+
+
+
+		//
 		// Видео изотоп
 		// --------------------------------------------------
-		isotop_video: function() {
-			$container = $('#video-container');
+		isotop_video : function() {
+			var $container = $('#video-container');
 
 			$container.isotope({
 				itemSelector: '.video-item',
@@ -50,6 +73,28 @@ App = {
 				$('#video-filter').find('button').removeClass('active');
 				$(this).addClass('active');
 			});
+		},
+
+
+
+		//
+		// Медиа галерея - воспроизведение
+		// --------------------------------------------------
+		fancy_media : function() {
+
+			$('.media-action-image').fancybox({
+				closeBtn		: false,
+				helpers		: {
+					title	: { type : 'inside' },
+					buttons	: {}
+				}
+			});
+			$('.media-action-pdf').fancybox();
+			$('.media-action-link').on('click', function() {
+				var link = $(this).data('fancybox-href');
+				var newWin = window.open(link, '_blank');
+			})
+
 		},
 
 
