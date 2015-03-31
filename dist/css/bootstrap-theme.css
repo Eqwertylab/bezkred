@@ -1272,9 +1272,6 @@ img + .nophoto {
 .docs .title {
   white-space: nowrap;
 }
-.docs .num {
-  white-space: nowrap;
-}
 .docs .hidden {
   display: none;
 }
